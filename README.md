@@ -25,7 +25,6 @@ call plug#end()
 "common
 inoremap ' ''<ESC>i
 inoremap " ""<ESC>i
-inoremap ` ``<ESC>i
 inoremap ( ()<ESC>i
 inoremap [ []<ESC>i
 inoremap { {}<ESC>
