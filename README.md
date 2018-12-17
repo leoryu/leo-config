@@ -27,7 +27,7 @@ inoremap ' ''<ESC>i
 inoremap " ""<ESC>i
 inoremap ( ()<ESC>i
 inoremap [ []<ESC>i
-inoremap { {}<ESC>
+inoremap { {}<ESC>i
 imap jk <Esc>
 set tabstop=4
 set softtabstop=4
@@ -35,6 +35,7 @@ set shiftwidth=4
 set noexpandtab
 set smartindent
 set nocompatible
+set wildmenu
 
 "gruvbox
 colorscheme gruvbox
@@ -42,7 +43,6 @@ set background=dark
 
 "lightline.vim
 set laststatus=2
-set noshowmode
 if !has('gui_running')
   set t_Co=256
 endif
@@ -51,6 +51,7 @@ endif
 map <C-h> :NERDTreeToggle<CR>
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+let NERDTreeShowHidden = 1
 
 "tagbar
 map <C-]> :TagbarToggle<CR>
@@ -79,8 +80,7 @@ let g:go_highlight_function_calls = 1
 let g:go_highlight_operators = 1
 let g:go_highlight_extra_types = 1
 let g:go_highlight_build_constraints = 1
-let g:go_metalinter_enabled = ['vet', 'golint', 'errcheck', 'deadcode', 'malig
-ned', 'gosec', 'dupl', 'gocyclo ']
+let g:go_metalinter_enabled = ['vet', 'golint', 'errcheck', 'deadcode', 'maligned', 'gosec', 'dupl', 'gocyclo']
 let g:go_metalinter_autosave = 1
 let g:go_metalinter_autosave_enabled = ['vet', 'golint']
 let g:go_auto_type_info = 1
