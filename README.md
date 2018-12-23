@@ -24,6 +24,7 @@ call plug#begin('~/.local/share/nvim/plugged')
 
   "common
   Plug 'morhetz/gruvbox'
+  Plug 'godlygeek/tabular'
   Plug 'plasticboy/vim-markdown', {'for': 'markdown'}
   Plug 'scrooloose/nerdtree'
   map <C-h> :NERDTreeToggle<CR>
