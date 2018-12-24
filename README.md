@@ -24,12 +24,21 @@ call plug#begin('~/.local/share/nvim/plugged')
 
   "common
   Plug 'morhetz/gruvbox'
+  Plug 'godlygeek/tabular'
   Plug 'plasticboy/vim-markdown', {'for': 'markdown'}
   Plug 'scrooloose/nerdtree'
   map <C-h> :NERDTreeToggle<CR>
   autocmd StdinReadPre * let s:std_in=1
   autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
   let NERDTreeShowHidden=1
+  Plug 'vim-syntastic/syntastic'
+  set statusline+=%#warningmsg#
+  set statusline+=%{SyntasticStatuslineFlag()}
+  set statusline+=%*
+  let g:syntastic_always_populate_loc_list = 1
+  let g:syntastic_auto_loc_list = 1
+  let g:syntastic_check_on_open = 1
+  let g:syntastic_check_on_wq = 0
 
   Plug 'majutsushi/tagbar'
   map <C-]> :TagbarToggle<CR>
@@ -42,15 +51,14 @@ call plug#begin('~/.local/share/nvim/plugged')
 
   "ncm2
   Plug 'roxma/nvim-yarp'
+  Plug 'ncm2/ncm2'
   autocmd BufEnter * call ncm2#enable_for_buffer()
   set completeopt=noinsert,menuone,noselect
+  set shortmess+=c
   inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
   inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
   inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<cr>"
 
-  Plug 'ncm2/ncm2'
-  let g:ncm2_look_enabled = 1
-  
   Plug 'ncm2/ncm2-bufword'
   Plug 'fgrsnau/ncm-otherbuf', { 'branch': 'ncm2' }
   Plug 'ncm2/ncm2-path'
@@ -80,7 +88,6 @@ call plug#begin('~/.local/share/nvim/plugged')
   let g:go_auto_type_info = 1
 
   "TS
-  Plug 'leafgarland/typescript-vim'
   Plug 'HerringtonDarkholme/yats.vim'
   Plug 'mhartington/nvim-typescript', { 'do': './install.sh' }
 
@@ -97,6 +104,9 @@ inoremap ( ()<ESC>i
 inoremap [ []<ESC>i
 inoremap { {}<ESC>i
 imap jk <Esc>
+set wildmode=longest:full,full
+set number
+set relativenumber
 set background=dark
 set tabstop=4
 set softtabstop=4
