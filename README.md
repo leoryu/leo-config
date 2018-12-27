@@ -7,7 +7,7 @@ sudo apt update
 sudo apt upgrade
 sudo apt install git zsh
 sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-sudo apt install neovim ctags make
+sudo apt install neovim ctags make curl wget
 curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 ```
 
@@ -15,7 +15,10 @@ Also need: nodejs(nvm), go, bingo
 
 ## init.vim
 
-~/.config/nvim/init.vim OR
+~/.config/nvim/init.vim
+
+OR
+
 ~/.vimrc
 
 ```vim
@@ -23,19 +26,15 @@ Also need: nodejs(nvm), go, bingo
 call plug#begin('~/.local/share/nvim/plugged')
   
   "common
+  Plug 'mhinz/vim-startify'
   Plug 'morhetz/gruvbox'
+  Plug 'vim-airline/vim-airline'
+  let g:airline#extensions#tabline#enabled = 1
   Plug 'scrooloose/nerdtree'
   map <C-h> :NERDTreeToggle<CR>
-  autocmd StdinReadPre * let s:std_in=1
-  autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
   let NERDTreeShowHidden = 1
   Plug 'majutsushi/tagbar'
   map <C-]> :TagbarToggle<CR>
-  Plug 'itchyny/lightline.vim'
-  set laststatus=2
-  if !has('gui_running')
-    set t_Co=256
-  endif
 
   "vim-lsp
   Plug 'prabirshrestha/asyncomplete.vim'
@@ -49,13 +48,13 @@ call plug#begin('~/.local/share/nvim/plugged')
   let g:lsp_diagnostics_echo_cursor = 1
   let g:lsp_signs_error = {'text': '✗'}
   let g:lsp_signs_warning = {'text': '‼'}
-  let g:lsp_signs_hint = {'text': '✭'}
+  let g:lsp_signs_hint = {'text': '♪'}
   autocmd! CompleteDone * if pumvisible() == 0 | pclose | endif
   highlight link LspErrorText GruvboxRedSign " requires gruvbox
   highlight clear LspWarningLine
-  nnoremap H :LspHover<CR>
+  nnoremap gh :LspHover<CR>
+  nnoremap gd :LspDefinition<CR>
   nnoremap <leader>s :LspDocumentSymbol<CR>
-  nnoremap <leader>ld :LspDefinition<CR>
   nnoremap <leader>lr :LspReferences<CR>
   nnoremap <leader>lim :LspImplementation<CR>
   nnoremap <leader>lrn :LspRename<CR>
@@ -85,9 +84,28 @@ call plug#begin('~/.local/share/nvim/plugged')
           \ 'whitelist': ['css', 'less', 'sass'],
           \ })
   endif
+  if executable('bash-language-server')
+      au User lsp_setup call lsp#register_server({
+          \ 'name': 'bash-language-server',
+          \ 'cmd': {server_info->[&shell, &shellcmdflag, 'bash-language-server start']},
+          \ 'whitelist': ['sh'],
+          \ })
+  endif
+  if executable('pyls')
+      au User lsp_setup call lsp#register_server({
+          \ 'name': 'pyls',
+          \ 'cmd': {server_info->['pyls']},
+          \ 'whitelist': ['python'],
+          \ })
+  endif
 
   "Markdown
   Plug 'plasticboy/vim-markdown', {'for': 'markdown'}
+
+  "HTML
+  Plug 'mattn/emmet-vim'
+  let g:user_emmet_install_global = 0
+  autocmd FileType html,css EmmetInstall
 
   "TS
   Plug 'HerringtonDarkholme/yats.vim'
@@ -112,6 +130,7 @@ call plug#begin('~/.local/share/nvim/plugged')
 call plug#end()
 
 "common
+syntax on
 colorscheme gruvbox
 map <C-n> :cnext<CR>
 map <C-m> :cprevious<CR>
@@ -125,6 +144,7 @@ inoremap ( ()<ESC>i
 inoremap [ []<ESC>i
 inoremap { {}<ESC>i
 imap jk <Esc>
+set list lcs=tab:\|\ 
 set wildmenu
 set wildmode=longest:full,full
 set number
@@ -141,12 +161,44 @@ set smartindent
 ~/.zshrc
 
 ```sh
-# lightline.vim
-export TERM=xterm-256color
-
 # Go
 export GOPATH=$HOME/Workspace/go
 export PATH=$PATH:$GOPATH/bin
 
+```
+
+## VSCode settings
+
+settings.json
+
+```json
+{
+    "editor.detectIndentation": false,
+    "editor.formatOnSave": true,
+    "editor.lineNumbers": "relative",
+    "[markdown]": {
+        "editor.wordWrap": "on",
+        "editor.quickSuggestions": true
+    },
+    "gitlens.advanced.messages": {
+        "suppressSupportGitLensNotification": true
+    },
+    "vim.insertModeKeyBindingsNonRecursive": [
+        {
+            "before": [
+                "j",
+                "k"
+            ],
+            "after": [
+                "<Esc>"
+            ]
+        }
+    ],
+    "vim.disableExtension": false,
+    "vim.useSystemClipboard": true,
+    "vim.enableNeovim": true,
+    "vim.hlsearch": true,
+    "vim.statusBarColorControl": true
+}
 ```
 
