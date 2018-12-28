@@ -7,11 +7,14 @@ sudo apt update
 sudo apt upgrade
 sudo apt install git zsh
 sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-sudo apt install neovim ctags make curl wget
+sudo apt install neovim ctags make curl wget gcc g++ python3-pip
 curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | zsh
+pip3 install --user python-language-server
+npm install -g typescript typescript-language-server vscode-css-languageserver-bin bash-language-server
 ```
 
-Also need: nodejs(nvm), go, bingo
+Also need: go, bingo
 
 ## init.vim
 
@@ -161,9 +164,12 @@ set smartindent
 ~/.zshrc
 
 ```sh
+export TERM=xterm-256color
+
 # Go
+export GOROOT=/usr/local/go
 export GOPATH=$HOME/Workspace/go
-export PATH=$PATH:$GOPATH/bin
+export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
 
 ```
 
