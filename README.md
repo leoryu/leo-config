@@ -130,7 +130,7 @@ call plug#begin('~/.local/share/nvim/plugged')
   let g:go_highlight_build_constraints = 1
   let g:go_metalinter_enabled = ['golint', 'vet', 'errcheck', 'deadcode', 'maligned', 'gosec', 'dupl', 'gocyclo']
   let g:go_metalinter_autosave = 1
-  let g:go_metalinter_autosave_enabled=['golint', 'vet', 'errcheck', 'deadcode', 'maligned']
+  let g:go_metalinter_autosave_enabled=['golint', 'vet', 'gosec', 'gocyclo']
   let g:go_auto_type_info = 1
   let g:go_def_mapping_enabled = 0
  
