@@ -13,8 +13,8 @@ sudo apt install neovim ctags make wget gcc g++ python3-pip code-oss
 sudo sed -i 's/BIG-REQUESTS/_IG-REQUESTS/' /usr/lib/aarch64-linux-gnu/libxcb.so.1.1.0
 sudo sed -i 's/BIG-REQUESTS/_IG-REQUESTS/' /usr/lib/aarch64-linux-gnu/libxcb.so.1
 curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-mkdir -p $NVM_DIR/versions/node 
 curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | zsh
+mkdir -p $NVM_DIR/versions/node 
 pip3 install --user python-language-server
 npm install -g --registry=https://registry.npm.taobao.org typescript typescript-language-server vscode-css-languageserver-bin bash-language-server
 ```
