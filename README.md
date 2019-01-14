@@ -252,7 +252,7 @@ if ! grep -q "defaults.bluealsa" /home/pi/.asoundrc
 
 then
 
-rm /home/pi/.asoundrc
+rm -rf /home/pi/.asoundrc
 printf '\n' >> /home/pi/.asoundrc
 printf 'defaults.bluealsa.interface "hci0"\n' >> /home/pi/.asoundrc
 printf 'defaults.bluealsa.device "7C:49:EB:DC:14:BE"\n' >> /home/pi/.asoundrc
