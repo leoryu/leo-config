@@ -171,6 +171,8 @@ let $VTE_VERSION = "100"
 ~/.zshrc
 
 ```sh
+export LANG=zh_CN.UTF-8
+
 export TERM=xterm-256color
 
 # Go
