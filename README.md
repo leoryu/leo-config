@@ -16,7 +16,7 @@ curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.g
 curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | zsh
 mkdir -p $NVM_DIR/versions/node 
 pip3 install --user python-language-server
-npm install -g --registry=https://registry.npm.taobao.org typescript typescript-language-server vscode-css-languageserver-bin bash-language-server
+npm install -g --registry=https://registry.npm.taobao.org cnpm typescript typescript-language-server vscode-css-languageserver-bin bash-language-server
 ```
 
 Also need: go, bingo
@@ -180,6 +180,16 @@ export GOROOT=/usr/local/go
 export GOPATH=$HOME/Workspace/go
 export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
 
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+#alias for cnpm
+alias cnpm="npm --registry=https://registry.npm.taobao.org \
+  --cache=$HOME/.npm/.cache/cnpm \
+  --disturl=https://npm.taobao.org/dist \
+  --userconfig=$HOME/.cnpmrc"
 ```
 
 ## xinitrc
