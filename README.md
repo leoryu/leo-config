@@ -5,21 +5,20 @@
 ```sh
 sudo apt update
 sudo apt upgrade
-sudo apt install git zsh curl
+sudo apt install git zsh curl autocutsel fonts-droid-fallback fonts-noto-cjk scim-pinyin fonts-arphic-ukai libasound2
+sudo apt remove fonts-arphic-ukai fonts-arphic-uming
 sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-curl -s https://packagecloud.io/install/repositories/headmelted/codebuilds/script.deb.sh | sudo zsh
+curl -s https://packagecloud.io/install/repositories/headmelted/codebuilds/script.deb.sh | sudo bash
 sudo apt update
-sudo apt install neovim ctags make wget gcc g++ python3-pip code-oss
-sudo sed -i 's/BIG-REQUESTS/_IG-REQUESTS/' /usr/lib/aarch64-linux-gnu/libxcb.so.1.1.0
+sudo apt install  code-oss
+sudo cp /usr/lib/aarch64-linux-gnu/libxcb.so.1 /usr/lib/aarch64-linux-gnu/libxcb.so.1.bak
 sudo sed -i 's/BIG-REQUESTS/_IG-REQUESTS/' /usr/lib/aarch64-linux-gnu/libxcb.so.1
-curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | zsh
-mkdir -p $NVM_DIR/versions/node 
-pip3 install --user python-language-server
-npm install -g --registry=https://registry.npm.taobao.org cnpm typescript typescript-language-server vscode-css-languageserver-bin bash-language-server
+# curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+# curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | zsh
+# mkdir -p $NVM_DIR/versions/node 
+# pip3 install --user python-language-server
+# npm install -g --registry=https://registry.npm.taobao.org cnpm typescript typescript-language-server vscode-css-languageserver-bin bash-language-server
 ```
-
-Also need: go, bingo
 
 ## init.vim
 
@@ -171,8 +170,6 @@ let $VTE_VERSION = "100"
 ~/.zshrc
 
 ```sh
-export LANG=zh_CN.UTF-8
-
 export TERM=xterm-256color
 
 # Go
@@ -197,18 +194,18 @@ alias cnpm="npm --registry=https://registry.npm.taobao.org \
 ~/.xinitrc
 
 ```sh
-sudo ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
-XAUTHORITY=$HOME/.Xauthority
-export XAUTHORITY
-echo $$ > /tmp/xsession.pid
-export LANG=zh_CN.UTF-8
-export LC_CTYPE=zh_CN.UTF-8
+# sudo ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
+# XAUTHORITY=$HOME/.Xauthority
+# export XAUTHORITY
+# echo $$ > /tmp/xsession.pid
+# export LANG=zh_CN.UTF-8
+# export LC_CTYPE=zh_CN.UTF-8
 export XMODIFIERS=@im=SCIM
 export GTK_IM_MODULE=scim
 export QT_IM_MODULE=scim
 scim -d
 autocutsel -fork
-. $HOME/.xsession
+# . $HOME/.xsession
 ```
 
 ## VSCode settings
@@ -239,7 +236,7 @@ settings.json
         }
     ],
     "vim.disableExtension": false,
-    "vim.useSystemClipboard": true,
+    // "vim.useSystemClipboard": true,
     "vim.enableNeovim": true,
     "vim.hlsearch": true,
     "vim.statusBarColorControl": true
