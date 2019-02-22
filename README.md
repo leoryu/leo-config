@@ -13,7 +13,7 @@ sudo apt update
 sudo apt install  code-oss
 sudo cp /usr/lib/aarch64-linux-gnu/libxcb.so.1 /usr/lib/aarch64-linux-gnu/libxcb.so.1.bak
 sudo sed -i 's/BIG-REQUESTS/_IG-REQUESTS/' /usr/lib/aarch64-linux-gnu/libxcb.so.1
-# curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 # curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | zsh
 # mkdir -p $NVM_DIR/versions/node 
 # pip3 install --user python-language-server
@@ -214,6 +214,7 @@ settings.json
 
 ```json
 {
+    "terminal.integrated.rendererType": "dom",
     "editor.detectIndentation": false,
     "editor.formatOnSave": true,
     "editor.lineNumbers": "relative",
@@ -235,8 +236,9 @@ settings.json
             ]
         }
     ],
+    "vim.neovimPath": "/usr/bin/nvim",
     "vim.disableExtension": false,
-    // "vim.useSystemClipboard": true,
+    "vim.useSystemClipboard": true,
     "vim.enableNeovim": true,
     "vim.hlsearch": true,
     "vim.statusBarColorControl": true
