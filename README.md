@@ -238,10 +238,10 @@ settings.json
     ],
     "vim.neovimPath": "/usr/bin/nvim",
     "vim.disableExtension": false,
-    "vim.useSystemClipboard": true,
     "vim.enableNeovim": true,
     "vim.hlsearch": true,
-    "vim.statusBarColorControl": true
+    "vim.statusBarColorControl": true,
+    "keyboard.dispatch": "keyCode"
 }
 ```
 
