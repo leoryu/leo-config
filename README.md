@@ -5,7 +5,7 @@
 ```sh
 sudo apt update
 sudo apt upgrade
-sudo apt install git zsh curl autocutsel fonts-droid-fallback fonts-noto-cjk scim-pinyin fonts-arphic-ukai libasound2
+sudo apt install git zsh curl autocutsel fonts-droid-fallback fonts-noto-cjk scim-pinyin fonts-arphic-ukai libasound2 neovim
 sudo apt remove fonts-arphic-ukai fonts-arphic-uming
 sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 curl -s https://packagecloud.io/install/repositories/headmelted/codebuilds/script.deb.sh | sudo bash
