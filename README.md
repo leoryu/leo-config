@@ -33,6 +33,8 @@ OR
 call plug#begin('~/.local/share/nvim/plugged')
   
   "common
+  Plug 'jiangmiao/auto-pairs'
+  Plug 'scrooloose/nerdcommenter'
   Plug 'mhinz/vim-startify'
   Plug 'morhetz/gruvbox'
   Plug 'vim-airline/vim-airline'
@@ -145,11 +147,6 @@ nnoremap <leader>a :cclose<CR>
 inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<cr>"
-inoremap ' ''<ESC>i
-inoremap " ""<ESC>i
-inoremap ( ()<ESC>i
-inoremap [ []<ESC>i
-inoremap { {}<ESC>i
 imap jk <Esc>
 set list lcs=tab:\|\ 
 set wildmenu
