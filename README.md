@@ -57,10 +57,10 @@ call plug#begin('~/.local/share/nvim/plugged')
 call plug#end()
 
 "common
+"set list lcs=tab:\|\ 
 syntax on
 colorscheme gruvbox
 imap jk <Esc>
-set list lcs=tab:\|\ 
 set noshowmode
 set wildmenu
 set wildmode=longest:full,full
@@ -320,11 +320,14 @@ sudo mv kodi.sh /usr/local/bin/
 	email = leo-ryu@outlook.com
 [core]
 	editor = nvim
-[diff]
-    tool = vimdiff
 [merge]
-    tool = vimdiff
-    conflictstyle = diff3
+	tool = vimdiff
+[mergetool]
+	prompt = true
 [mergetool "vimdiff"]
-    cmd = nvim -d $BASE $LOCAL $REMOTE $MERGED -c '$wincmd w' -c 'wincmd J'
+	cmd = nvim -d $LOCAL $REMOTE $MERGED -c '$wincmd w' -c 'wincmd J'
+[difftool]
+	prompt = false
+[diff]
+	tool = vimdiff
 ```
