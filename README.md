@@ -205,6 +205,9 @@ nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
 ```sh
 export TERM=xterm-256color
 
+# Webpack
+export CHOKIDAR_USEPOLLING=true
+
 # Go
 export GOROOT=/usr/local/go
 export GOPATH=$HOME/Workspace/go
