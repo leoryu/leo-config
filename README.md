@@ -9,15 +9,15 @@ sudo apt install git zsh curl autocutsel fonts-droid-fallback fonts-noto-cjk sci
 sudo apt remove fonts-arphic-ukai fonts-arphic-uming
 sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 curl -s https://packagecloud.io/install/repositories/headmelted/codebuilds/script.deb.sh | sudo bash
-sudo apt update
-sudo apt install  code-oss
-sudo cp /usr/lib/aarch64-linux-gnu/libxcb.so.1 /usr/lib/aarch64-linux-gnu/libxcb.so.1.bak
-sudo sed -i 's/BIG-REQUESTS/_IG-REQUESTS/' /usr/lib/aarch64-linux-gnu/libxcb.so.1
+# sudo apt update
+# sudo apt install  code-oss
+# sudo cp /usr/lib/aarch64-linux-gnu/libxcb.so.1 /usr/lib/aarch64-linux-gnu/libxcb.so.1.bak
+# sudo sed -i 's/BIG-REQUESTS/_IG-REQUESTS/' /usr/lib/aarch64-linux-gnu/libxcb.so.1
 curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.34.0/install.sh | zsh
-# mkdir -p $NVM_DIR/versions/node 
-# pip3 install --user python-language-server
-npm install -g --registry=https://registry.npm.taobao.org cnpm yarn
+npm install -g --registry=https://registry.npm.taobao.org yarn
+npm config set registry=https://registry.npm.taobao.org
+yarn config set registry https://registry.npm.taobao.org
 ```
 
 ## init.vim
@@ -211,15 +211,10 @@ export GOPATH=$HOME/Workspace/go
 export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
 
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+# export NVM_DIR="$HOME/.nvm"
+# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+# [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-#alias for cnpm
-alias cnpm="npm --registry=https://registry.npm.taobao.org \
-  --cache=$HOME/.npm/.cache/cnpm \
-  --disturl=https://npm.taobao.org/dist \
-  --userconfig=$HOME/.cnpmrc"
 ```
 
 ## xinitrc
