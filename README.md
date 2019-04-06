@@ -312,3 +312,19 @@ chmod a+x kodi.sh
 sudo mv kodi.sh /usr/local/bin/
 ```
 
+## ~/.gitconfig
+
+```gitconfig
+[user]
+	name = leo
+	email = leo-ryu@outlook.com
+[core]
+	editor = nvim
+[diff]
+    tool = vimdiff
+[merge]
+    tool = vimdiff
+    conflictstyle = diff3
+[mergetool "vimdiff"]
+    cmd = nvim -d $BASE $LOCAL $REMOTE $MERGED -c '$wincmd w' -c 'wincmd J'
+```
