@@ -337,14 +337,11 @@ sudo mv kodi.sh /usr/local/bin/
 	email = leo-ryu@outlook.com
 [core]
 	editor = nvim
-[merge]
-	tool = vimdiff
-[mergetool]
-	prompt = true
-[mergetool "vimdiff"]
-	cmd = nvim -d $LOCAL $REMOTE $MERGED -c '$wincmd w' -c 'wincmd J'
-[difftool]
-	prompt = false
 [diff]
-	tool = vimdiff
+    tool = vimdiff
+[merge]
+    tool = vimdiff
+    conflictstyle = diff3
+[mergetool "vimdiff"]
+    cmd = nvim -d $BASE $LOCAL $REMOTE $MERGED -c '$wincmd w' -c 'wincmd J'
 ```
