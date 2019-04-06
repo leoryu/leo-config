@@ -276,6 +276,23 @@ settings.json
 }
 ```
 
+## coc-settings
+
+~/.config/nvim/coc-settings.json
+
+```json
+{
+"languageserver": {
+    "golang": {
+      "command": "gopls",
+      "args": [],
+      "rootPatterns": ["go.mod", ".vim/", ".git/", ".hg/"],
+      "filetypes": ["go"]
+    }
+  }
+}
+```
+
 ## kodi.sh
 
 ```sh
