@@ -39,11 +39,13 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'morhetz/gruvbox'
   Plug 'vim-airline/vim-airline'
   let g:airline#extensions#tabline#enabled = 1
+  let g:airline_powerline_fonts = 1
   Plug 'scrooloose/nerdtree'
   map <C-h> :NERDTreeToggle<CR>
   let NERDTreeShowHidden = 1
   Plug 'majutsushi/tagbar'
   map <C-]> :TagbarToggle<CR>
+  Plug 'tpope/vim-fugitive'
 
   "Coc
   Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
@@ -58,6 +60,7 @@ call plug#end()
 
 "common
 "set list lcs=tab:\|\ 
+"set encoding=utf-8
 syntax on
 colorscheme gruvbox
 imap jk <Esc>
@@ -76,7 +79,7 @@ let $VTE_VERSION = "100"
 
 "Coc
 " if hidden is not set, TextEdit might fail.
-set hidden
+"set hidden
 
 " Better display for messages
 "set cmdheight=2
@@ -88,7 +91,7 @@ set hidden
 set shortmess+=c
 
 " always show signcolumns
-set signcolumn=yes
+"set signcolumn=yes
 
 " Use tab for trigger completion with characters ahead and navigate.
 " Use command ':verbose imap <tab>' to make sure tab is not mapped by other plugin.
