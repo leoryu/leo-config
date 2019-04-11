@@ -341,10 +341,9 @@ sudo mv kodi.sh /usr/local/bin/
 [core]
 	editor = nvim
 [diff]
-    tool = vimdiff
+	tool = vimdiff
 [merge]
-    tool = vimdiff
-    conflictstyle = diff3
+	tool = vimdiff
 [mergetool "vimdiff"]
-    cmd = nvim -d $BASE $LOCAL $REMOTE $MERGED -c '$wincmd w' -c 'wincmd J'
+	cmd = nvim -f -c \"Gdiff\" \"$MERGED\"
 ```
