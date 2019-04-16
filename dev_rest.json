@@ -1,0 +1,111 @@
+{
+	"version": 2,
+	"data": {
+		"get paper": {
+			"name": "get paper",
+			"tags": [
+				"api"
+			],
+			"method": "GET",
+			"url": "http://192.168.1.100:7777/api/papers/5cb2a59bb39a75d5dbe2c732",
+			"headers": [],
+			"body": "",
+			"created_at": "2019-04-14T03:20:35.299Z",
+			"updated_at": "2019-04-14T03:20:35.299Z"
+		},
+		"get paper (local)": {
+			"name": "get paper (local)",
+			"tags": [
+				"api"
+			],
+			"method": "GET",
+			"url": "http://localhost:7777/api/papers/5c87bb2ddaf8719db75dcc8f",
+			"headers": [],
+			"body": "",
+			"created_at": "2019-04-16T15:37:59.510Z",
+			"updated_at": "2019-04-16T15:37:59.510Z"
+		},
+		"list papers": {
+			"name": "list papers",
+			"tags": [
+				"api"
+			],
+			"method": "GET",
+			"url": "http://192.168.1.100:7777/api/papers/?tag=tag1&limit=10&page=1",
+			"headers": [],
+			"body": "",
+			"created_at": "2019-04-14T03:19:54.882Z",
+			"updated_at": "2019-04-14T03:19:54.882Z"
+		},
+		"list papers (local)": {
+			"name": "list papers (local)",
+			"tags": [
+				"api"
+			],
+			"method": "GET",
+			"url": "http://localhost:7777/api/papers/?tag=tag1&limit=10&page=1",
+			"headers": [],
+			"body": "",
+			"created_at": "2019-04-16T15:37:22.214Z",
+			"updated_at": "2019-04-16T15:37:22.214Z"
+		},
+		"new paper": {
+			"name": "new paper",
+			"tags": [
+				"api"
+			],
+			"method": "POST",
+			"url": "http://192.168.1.100:7777/api/papers",
+			"headers": [
+				{
+					"name": "Authorization",
+					"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1NTU0NzAwMTEsIm5hbWUiOiJhYmMifQ.kp-WUXZsdqaA8OUg-lIcGvyFTGJtYRgXZ2ONYC4HDvo"
+				}
+			],
+			"body": "{\n  \"title\": \"paper title\",\n  \"tags\": {\"tag1\": true, \"tag2\": true},\n  \"abstract\": \"paper abstract\",\n  \"content\": \"# 你好！\"\n}",
+			"created_at": "2019-04-14T03:15:25.147Z",
+			"updated_at": "2019-04-14T03:15:25.147Z"
+		},
+		"new paper (local)": {
+			"name": "new paper (local)",
+			"tags": [
+				"api"
+			],
+			"method": "POST",
+			"url": "http://localhost:7777/api/papers",
+			"headers": [
+				{
+					"name": "Authorization",
+					"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1NTU0NzAwMTEsIm5hbWUiOiJhYmMifQ.kp-WUXZsdqaA8OUg-lIcGvyFTGJtYRgXZ2ONYC4HDvo"
+				}
+			],
+			"body": "{\n  \"title\": \"paper title\",\n  \"tags\": {\"tag1\": true, \"tag2\": true},\n  \"abstract\": \"paper abstract\",\n  \"content\": \"# 你好！\"\n}",
+			"created_at": "2019-04-16T15:38:43.268Z",
+			"updated_at": "2019-04-16T15:38:43.268Z"
+		},
+		"verify": {
+			"name": "verify",
+			"tags": [
+				"api"
+			],
+			"method": "POST",
+			"url": "http://192.168.1.100:7777/api/verify",
+			"headers": [],
+			"body": "{\n  \"username\": \"abc\",\n  \"password\": \"123\"\n}",
+			"created_at": "2019-04-14T03:01:05.990Z",
+			"updated_at": "2019-04-14T03:01:05.990Z"
+		},
+		"verify (local)": {
+			"name": "verify (local)",
+			"tags": [
+				"api"
+			],
+			"method": "POST",
+			"url": "http://localhost:7777/api/verify",
+			"headers": [],
+			"body": "{\n  \"username\": \"abc\",\n  \"password\": \"123\"\n}",
+			"created_at": "2019-04-16T15:39:32.599Z",
+			"updated_at": "2019-04-16T15:39:32.599Z"
+		}
+	}
+}
