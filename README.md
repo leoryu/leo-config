@@ -56,6 +56,9 @@ call plug#begin('~/.local/share/nvim/plugged')
   "TS
   Plug 'HerringtonDarkholme/yats.vim'
 
+  "Go
+  Plug 'buoto/gotests-vim'
+
 call plug#end()
 
 "common
