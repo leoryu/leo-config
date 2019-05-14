@@ -1,0 +1,11 @@
+[user]
+	name = leo
+	email = leo-ryu@outlook.com
+[core]
+	editor = nvim
+[diff]
+	tool = vimdiff
+[merge]
+	tool = vimdiff
+[mergetool "vimdiff"]
+	cmd = nvim -f -c \"Gdiff\" \"$MERGED\"

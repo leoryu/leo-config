@@ -1,0 +1,35 @@
+{
+    "editor.detectIndentation": false,
+    "editor.formatOnSave": true,
+    "editor.lineNumbers": "relative",
+    "[markdown]": {
+        "editor.wordWrap": "on",
+        "editor.quickSuggestions": true
+    },
+    "gitlens.advanced.messages": {
+        "suppressSupportGitLensNotification": true
+    },
+    "vim.insertModeKeyBindingsNonRecursive": [
+        {
+            "before": [
+                "j",
+                "k"
+            ],
+            "after": [
+                "<Esc>"
+            ]
+        }
+    ],
+    "vim.disableExtension": false,
+    "vim.enableNeovim": true,
+    "vim.hlsearch": true,
+    "vim.statusBarColorControl": true,
+    "workbench.colorCustomizations": {
+        "statusBar.background": "#005f5f",
+        "statusBar.noFolderBackground": "#005f5f",
+        "statusBar.debuggingBackground": "#005f5f"
+    },
+    "vim.neovimPath": "/usr/bin/nvim",
+    "terminal.integrated.rendererType": "dom",
+    "window.titleBarStyle": "custom",
+}
