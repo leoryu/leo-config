@@ -17,7 +17,7 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'tpope/vim-fugitive'
 
   "Coc
-  Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
+  Plug 'neoclide/coc.nvim', {'tag': '*', 'do': './install.sh'}
 
   "Markdown
   Plug 'plasticboy/vim-markdown', {'for': 'markdown'}
@@ -52,6 +52,11 @@ let $VTE_VERSION = "100"
 "Coc
 " if hidden is not set, TextEdit might fail.
 "set hidden
+
+
+" Some servers have issues with backup files, see #649
+set nobackup
+set nowritebackup
 
 " Better display for messages
 "set cmdheight=2
