@@ -17,8 +17,7 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'tpope/vim-fugitive'
 
   "Coc
-  Plug 'neoclide/coc.nvim', {'tag': '*', 'do': './install.sh'}
-
+  Plug 'neoclide/coc.nvim', {'branch': 'release'}
   "Markdown
   Plug 'plasticboy/vim-markdown', {'for': 'markdown'}
 
